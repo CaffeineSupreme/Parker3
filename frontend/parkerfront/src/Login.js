@@ -36,7 +36,13 @@ function Login(){
     return(
         <div className='background-gif d-flex justify-content-center align-items-center vh-100'>
         <div className='bg-white p-3 rounded w-25'>
-            <h2>Log-in</h2>
+            <h2>
+            <img
+            src="/Parkerlogo.png"
+            alt="Parker Logo"
+            style={{ width: '100px', height: 'auto', marginLeft: '10px' }}
+            />
+            Log-in      </h2>
             <form action="" onSubmit={handleSubmit}>
                 <div className='mb-3' >
                     <label htmlFor='email'><strong>Email</strong></label>
