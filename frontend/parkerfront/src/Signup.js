@@ -34,7 +34,13 @@ function Signup() {
   return (
 <div className='background-gif d-flex justify-content-center align-items-center vh-100'>
         <div className='bg-white p-3 rounded w-25'>
-            <h2>Sign-Up</h2>
+        <h2>
+            <img
+            src="/Parkerlogo.png"
+            alt="Parker Logo"
+            style={{ width: '100px', height: 'auto', marginLeft: '10px' }}
+            />
+            Sign-up     </h2>
             <form action="" onSubmit={handleSubmit}>
             <div className='mb-3' >
                     <label htmlFor='name'><strong>Name</strong></label>
