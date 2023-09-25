@@ -1,20 +1,36 @@
 import React, { useState } from 'react'
 import './Login.css';
-import { Link } from 'react-router-dom';
+import { Link,useNavigate } from 'react-router-dom';
 import validation from './LoginVal';
+import axios from 'axios';
 
 function Login(){
     const [values,setValues]=useState({
         email:'',
         password: ''
     })
+
+    const navigate=useNavigate();
     const [errors,setErrors]=useState({})
     const handleInput=(event)=>{
         setValues(prev=>({...prev, [event.target.name]: [event.target.value]}))
     }
     const handleSubmit=(event)=>{
         event.preventDefault();
-        setErrors(validation(values));
+        const err= validation(values);
+        setErrors(err);
+        if(errors.email==="" && errors.password===""){
+            axios.post('http://localhost:8080/login', values)
+            .then(res => {
+                if(res.data==="Success"){
+                    navigate('/home');
+                    console.log("login successfull")
+                }else{
+                    alert("No email in record, please sign up");
+                }
+            })
+            .catch(err => console.log(err));
+        }
     }
 
     return(

@@ -16,13 +16,15 @@ function Signup() {
     }
     const handleSubmit=(event)=>{
         event.preventDefault();
-        setErrors(validation(values));
+        const err= validation(values);
+        setErrors(err);
         if(errors.name==="" && errors.email==="" && errors.password===""){
-            axios.post('localhost:8081/signup', {values})
-            .then(res=> {
-                navigate('/');
-                console.log(res)})
-            .catch(err=> console.log(err));
+            axios.post('http://localhost:8080/signup', values)
+            .then(res => {
+              navigate('/');
+              console.log("adding successfull")
+            })
+            .catch(err => console.log(err));
         }
     }
 
