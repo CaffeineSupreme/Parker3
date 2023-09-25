@@ -8,7 +8,7 @@ function Login(){
             <form action="">
                 <div className='mb-3' >
                     <h1>
-                        hello
+                        helooo
                     </h1>
                     <label htmlFor='email'><strong>Email</strong></label>
                     <input type="email" placeholder='Enter CPP Email' className='form-control rounded-0'/>
