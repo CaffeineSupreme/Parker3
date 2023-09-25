@@ -59,7 +59,7 @@ function Signup() {
                 </div>
                 <div className='mb-3' >
                     <label htmlFor='password'><strong>Password</strong></label>
-                    <input type="passwprd" placeholder='Enter Password' name='password' 
+                    <input type="password" placeholder='Enter Password' name='password' 
                     onChange={handleInput} className='form-control rounded-0'/>
                      <span>{errors.password&& <span className='text-danger'> {errors.password}</span>}</span>
 
