@@ -15,7 +15,7 @@ if(values.password===""){
     error.password="Enter Password"
 }
 else if(!password_pattern.test(values.password)){
-    error.password="Password doesn't match"
+    error.password="Incorrect Password"
 }else{
     error.password=""
 }
