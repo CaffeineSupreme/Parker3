@@ -3,12 +3,14 @@ import './Login.css';
 import { Link,useNavigate } from 'react-router-dom';
 import validation from './LoginVal';
 import axios from 'axios';
+import {useLocalStorage} from "@uidotdev/usehooks";
 
 function Login(){
     const [values,setValues]=useState({
         email:'',
         password: ''
     })
+    const [name, setName] = useLocalStorage("name", null)
 
     const navigate=useNavigate();
     const [errors,setErrors]=useState({})
@@ -22,8 +24,10 @@ function Login(){
         if(errors.email==="" && errors.password===""){
             axios.post('http://localhost:8080/login', values)
             .then(res => {
-                if(res.data==="Success"){
+                if(res.status === 200){
                     navigate('/home');
+                    setName(res.data.name)
+                    console.log(name)
                     console.log("login successfull")
                 }else{
                     alert("No email in record, please sign up");
