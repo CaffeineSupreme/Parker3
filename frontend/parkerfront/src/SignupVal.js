@@ -24,7 +24,7 @@ function validation(values){
         error.password="Enter Password"
     }
     else if(!password_pattern.test(values.password)){
-        error.password="Password doesn't match"
+        error.password="Password must contain uppercase, lowercase, and number"
     }else{
         error.password=""
     }
