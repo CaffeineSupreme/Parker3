@@ -13,5 +13,5 @@ export function MyProvider({ children }) {
 }
 
 export function useMyContext() {
-  return useContext(MyContext);}
+  return useContext(MyContext);
 }
