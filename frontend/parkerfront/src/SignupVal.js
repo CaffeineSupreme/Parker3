@@ -15,7 +15,7 @@ function validation(values){
         error.email="Enter Email"
     }
     else if(!email_pattern.test(values.email)){
-        error.email="Email doesn't match"
+        error.email="Email format is invalid"
     }else{
         error.email=""
     }
