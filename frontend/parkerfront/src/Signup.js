@@ -19,7 +19,7 @@ function Signup() {
         const err= validation(values);
         setErrors(err);
         if(errors.name==="" && errors.email==="" && errors.password===""){
-            axios.post('http://localhost:8080/signup', values)
+            axios.post('http://ec2-3-16-37-51.us-east-2.compute.amazonaws.com:3000/signup', values)
             .then(res => {
               navigate('/');
               console.log("adding successfull")
