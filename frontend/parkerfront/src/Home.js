@@ -164,7 +164,16 @@ function Home() {
                 <MenuItem value="">None</MenuItem>
                 {/* copy and paste this structure to choose the busy times for it and make sure it matches the busy time we added in table */}
                 <MenuItem value="8:00 AM - 9:00 AM">8:00 AM - 9:00 AM</MenuItem>
+                <MenuItem value="9:00 AM - 10:00 AM">9:00 AM - 10:00 AM</MenuItem>
                 <MenuItem value="10:00 AM - 11:00 AM">10:00 AM - 11:00 AM</MenuItem>
+                <MenuItem value="11:00 AM - 12:00 PM">11:00 AM - 12:00 PM</MenuItem>
+                <MenuItem value="12:00 PM - 1:00 PM">12:00 PM - 1:00 PM</MenuItem>
+                <MenuItem value="1:00 PM - 2:00 PM">1:00 PM - 2:00 PM</MenuItem>
+                <MenuItem value="2:00 PM - 3:00 PM">2:00 PM - 3:00 PM</MenuItem>
+                <MenuItem value="3:00 PM - 4:00 PM">3:00 PM - 4:00 PM</MenuItem>
+                <MenuItem value="4:00 PM - 5:00 PM">4:00 PM - 5:00 PM</MenuItem>
+                <MenuItem value="5:00 PM - 6:00 PM">5:00 PM - 6:00 PM</MenuItem>
+                <MenuItem value="6:00 PM - 7:00 PM">6:00 PM - 7:00 PM</MenuItem>
               </Select>
               
               <FilterButton class="btn btn-outline-warning ml-auto" onClick={filterParkingLots}>
