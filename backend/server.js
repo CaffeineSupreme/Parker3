@@ -7,6 +7,8 @@ app.use(cors());
 app.use(express.json());
 
 const db=mysql.createConnection({
+
+    //TODO: enter in amazon RDS info
     host:"localhost",
     user: "root",
     password: "",
