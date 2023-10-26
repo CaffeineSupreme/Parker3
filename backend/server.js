@@ -9,10 +9,15 @@ app.use(express.json());
 const db=mysql.createConnection({
 
     //TODO: enter in amazon RDS info
-    host:"localhost",
+    /*host:"localhost",
     user: "root",
     password: "",
-    database: "cppsignup"
+    database: "cppsignup" */
+
+    host: "parker-db.czvjy8emwpin.us-west-1.rds.amazonaws.com",
+    user: "admin",
+    password: "Parker123",
+    database: "parker-db"
 
 })
 
