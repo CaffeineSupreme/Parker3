@@ -17,12 +17,12 @@ function Login(){
     const handleInput=(event)=>{
         setValues(prev=>({...prev, [event.target.name]: [event.target.value]}))
     }
+    /* the comments below were used to verify log-in info.
     const handleSubmit=(event)=>{
         event.preventDefault();
         const err= validation(values);
         setErrors(err);
-        // the comments below were used to verify log-in info.
-        /*
+        
         if(errors.email==="" && errors.password===""){
             axios.post('http://localhost:8080/login', values)
             .then(res => {
@@ -36,12 +36,14 @@ function Login(){
                 }
             })
             .catch(err => console.log(err));
-        } */
+        }
+    } */
 
+    const handleSubmit=(event)=>{
+        event.preventDefault();
+        const err= validation(values);
+        setErrors(err);
         navigate('/home');
-        setName(res.data.name)
-        console.log(name)
-        console.log("login successfull")
     }
 
     return(
