@@ -120,7 +120,7 @@ function Home() {
               component="div"
               sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
             >
-              Welcome to Parker, {JSON.parse(localStorage.getItem("name"))}!
+              Welcome to Parker {JSON.parse(localStorage.getItem("name"))}!
             </Typography>
             <Typography variant="h6" noWrap>
               Date: {date}
