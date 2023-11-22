@@ -185,6 +185,7 @@ function Home() {
 
 
   const [selectedTime, setSelectedTime] = useState("");
+  const [selectedPreference, setSelectedPreference] = useState("");
   const [searchInput, setSearchInput] = useState(""); //for the search bar
   const [filteredParkingLots, setFilteredParkingLots] = useState(parkingLots);
 
@@ -192,7 +193,7 @@ function Home() {
   const filterParkingLots = () => {
     const filteredLots = parkingLots.filter((lot) => {
       const matchesSearch = lot.name.toLowerCase().includes(searchInput.toLowerCase()); //to help match the search regardless of caps
-      const matchesTime = selectedTime === "" || lot.busyTime === selectedTime;
+      const matchesTime = selectedTime === "" || lot.busyTime !== selectedTime; //changed so the time slot search returns lots that are not busy at the time slot
       return matchesSearch && matchesTime;
     });
 
@@ -265,14 +266,46 @@ function Home() {
                 <MenuItem value="5:00 PM - 6:00 PM">5:00 PM - 6:00 PM</MenuItem>
                 <MenuItem value="6:00 PM - 7:00 PM">6:00 PM - 7:00 PM</MenuItem>
               </Select>
-              
-              <FilterButton class="btn btn-outline-warning ml-auto" onClick={filterParkingLots}>
-                Filter
-              </FilterButton>
             </div>
           </div>
         </div>
       </div>
+      <div style={centerContainerStyle}>
+          <Typography variant="h6" className="time_slot">
+            Select Building:
+          </Typography>
+          <div style={flexContainerStyle}>
+            <Select
+              value={selectedPreference}
+              onChange={(e) => setSelectedPreference(e.target.value)}
+            >
+              <MenuItem value="">None</MenuItem>
+              {/* Add preference options here */}
+              <MenuItem value="Absolute closest">Absolute closest</MenuItem>
+              <MenuItem value="Better chance">Better chance</MenuItem>
+            </Select>
+          </div>
+        </div>
+      <div style={centerContainerStyle}>
+          <Typography variant="h6" className="time_slot">
+            Select Preference:
+          </Typography>
+          <div style={flexContainerStyle}>
+            <Select
+              value={selectedPreference}
+              onChange={(e) => setSelectedPreference(e.target.value)}
+            >
+              <MenuItem value="">None</MenuItem>
+              {/* Add preference options here */}
+              <MenuItem value="Absolute closest">Absolute closest</MenuItem>
+              <MenuItem value="Better chance">Better chance</MenuItem>
+            </Select>
+            <FilterButton class="btn btn-outline-warning ml-auto" onClick={filterParkingLots}>
+                Filter
+              </FilterButton>
+          </div>
+        </div>
+        
 
       <TableContainer>
         <Table>
