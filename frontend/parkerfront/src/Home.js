@@ -95,7 +95,7 @@ function Home() {
   ];
 
    // List of closest parking lots by building
-   const returnCloseLots = [
+   const CloseLots = [
     { name: "Building 1", Lot: "Lot J" },
     { name: "Building 2", Lot: "Lot J" },
     { name: "Building 3", Lot: "Lot J" },
@@ -139,7 +139,7 @@ function Home() {
   
   ];
 
-  const returnSafeLots = [
+  const SafeLots = [
     { name: "Building 1", Lot: "Lot R" },
     { name: "Building 2", Lot: "Lot M" },
     { name: "Building 3", Lot: "Lot M" },
@@ -186,6 +186,7 @@ function Home() {
 
   const [selectedTime, setSelectedTime] = useState("");
   const [selectedPreference, setSelectedPreference] = useState("");
+  const [selectedBuilding, setSelectedBuilding] = useState("");
   const [searchInput, setSearchInput] = useState(""); //for the search bar
   const [filteredParkingLots, setFilteredParkingLots] = useState(parkingLots);
 
@@ -265,27 +266,33 @@ function Home() {
                 <MenuItem value="4:00 PM - 5:00 PM">4:00 PM - 5:00 PM</MenuItem>
                 <MenuItem value="5:00 PM - 6:00 PM">5:00 PM - 6:00 PM</MenuItem>
                 <MenuItem value="6:00 PM - 7:00 PM">6:00 PM - 7:00 PM</MenuItem>
+                <MenuItem value="7:00 PM - 8:00 PM">7:00 PM - 8:00 PM</MenuItem>
               </Select>
             </div>
           </div>
         </div>
       </div>
+
+      {/* Setting selected preference for parking, either closest or easily available*/}
       <div style={centerContainerStyle}>
           <Typography variant="h6" className="time_slot">
             Select Building:
           </Typography>
           <div style={flexContainerStyle}>
             <Select
+              id = "buildingDropdown"
               value={selectedPreference}
-              onChange={(e) => setSelectedPreference(e.target.value)}
+              onChange={(e) => setSelectedBuilding(e.target.value)}
             >
               <MenuItem value="">None</MenuItem>
               {/* Add preference options here */}
-              <MenuItem value="Absolute closest">Absolute closest</MenuItem>
-              <MenuItem value="Better chance">Better chance</MenuItem>
+              <MenuItem value="1">Building 1</MenuItem>
+              <MenuItem value="2">Building 2</MenuItem>
             </Select>
           </div>
         </div>
+
+      {/* Setting selected preference for parking, either closest or easily available*/}
       <div style={centerContainerStyle}>
           <Typography variant="h6" className="time_slot">
             Select Preference:
@@ -296,16 +303,15 @@ function Home() {
               onChange={(e) => setSelectedPreference(e.target.value)}
             >
               <MenuItem value="">None</MenuItem>
-              {/* Add preference options here */}
-              <MenuItem value="Absolute closest">Absolute closest</MenuItem>
-              <MenuItem value="Better chance">Better chance</MenuItem>
+              {/* Add building options here */}
+              <MenuItem value="close">Absolute closest</MenuItem>
+              <MenuItem value="easy">Better chance</MenuItem>
             </Select>
             <FilterButton class="btn btn-outline-warning ml-auto" onClick={filterParkingLots}>
                 Filter
               </FilterButton>
           </div>
         </div>
-        
 
       <TableContainer>
         <Table>
