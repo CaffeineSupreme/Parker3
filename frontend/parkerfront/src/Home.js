@@ -189,7 +189,7 @@ function Home() {
   const [selectedPreference, setSelectedPreference] = useState("");
   const [selectedBuilding, setSelectedBuilding] = useState("");
   const [searchInput, setSearchInput] = useState(""); //for the search bar
-  const [filteredParkingLots, setFilteredParkingLots] = useState(parkingLots);
+  const [filteredParkingLots, setFilteredParkingLots] = useState(closeLots);
 
   // Filters the lots shown in the table through the time slot selection or the app search bar on the top right
   const filterParkingLots = () => {
@@ -197,7 +197,7 @@ function Home() {
     if (selectedPreference === "close") {
       selectedList = closeLots;
     }
-    if (selectedPreference === "easy") {
+    else if (selectedPreference === "easy") {
       selectedList = safeLots;
     }
     else {
