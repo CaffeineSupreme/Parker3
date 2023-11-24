@@ -86,7 +86,7 @@ function Home() {
 
   // List of parking lots for us to add the student parking lots
   const parkingLots = [
-    { name: "Lot B", busyTime: "8:00 AM - 9:00 AM", link: "https://www.cpp.edu/maps/?id=1130#!m/276399" },
+    { building: "Building 1", name: "Lot B", busyTime: "8:00 AM - 9:00 AM", link: "https://www.cpp.edu/maps/?id=1130#!m/276399" },
     { name: "Structure 1", busyTime: "8:00 AM - 9:00 AM", link: "https://www.cpp.edu/maps/?id=1130#!m/276504" },
     { name: "Structure 2", busyTime: "10:00 AM - 11:00 AM", link: "https://www.cpp.edu/maps/?id=1130#!m/276389" },
     { name: "Lot J", busyTime: "10:00 AM - 11:00 AM", link: "https://www.cpp.edu/maps/?id=1130#!m/690096" },
@@ -285,9 +285,12 @@ function Home() {
               onChange={(e) => setSelectedBuilding(e.target.value)}
             >
               <MenuItem value="">None</MenuItem>
-              {/* Add preference options here */}
-              <MenuItem value="1">Building 1</MenuItem>
-              <MenuItem value="2">Building 2</MenuItem>
+              {/* Maps the entire list of buildings into the dropdown */}
+              {CloseLots.map((building) => (
+                <MenuItem key={building.name} value={building.name}>
+                  {building.name}
+                </MenuItem>
+              ))}
             </Select>
           </div>
         </div>
@@ -317,7 +320,8 @@ function Home() {
         <Table>
           <TableHead>
             <TableRow>
-              <TableCell><b>Student Parking Lots</b></TableCell>
+              <TableCell><b>Building</b></TableCell>
+              <TableCell><b>Student parking lot</b></TableCell>
               <TableCell><b>Busy Time</b></TableCell>
               <TableCell><b>Link</b></TableCell>
             </TableRow>
