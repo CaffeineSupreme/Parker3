@@ -86,100 +86,100 @@ function Home() {
 
   // List of parking lots for us to add the student parking lots
   const parkingLots = [
-    { building: "Building 1", name: "Lot B", busyTime: "8:00 AM - 9:00 AM", link: "https://www.cpp.edu/maps/?id=1130#!m/276399" },
-    { name: "Structure 1", busyTime: "8:00 AM - 9:00 AM", link: "https://www.cpp.edu/maps/?id=1130#!m/276504" },
-    { name: "Structure 2", busyTime: "10:00 AM - 11:00 AM", link: "https://www.cpp.edu/maps/?id=1130#!m/276389" },
-    { name: "Lot J", busyTime: "10:00 AM - 11:00 AM", link: "https://www.cpp.edu/maps/?id=1130#!m/690096" },
+    { building: "Building 1", lot: "Lot B", busyTime: "8:00 AM - 9:00 AM", link: "https://www.cpp.edu/maps/?id=1130#!m/276399" },
+    { building: "", lot: "Structure 1", busyTime: "8:00 AM - 9:00 AM", link: "https://www.cpp.edu/maps/?id=1130#!m/276504" },
+    { building: "", lot: "Structure 2", busyTime: "10:00 AM - 11:00 AM", link: "https://www.cpp.edu/maps/?id=1130#!m/276389" },
+    { building: "", lot: "Lot J", busyTime: "10:00 AM - 11:00 AM", link: "https://www.cpp.edu/maps/?id=1130#!m/690096" },
 
   
   ];
 
    // List of closest parking lots by building
-   const CloseLots = [
-    { name: "Building 1", Lot: "Lot J" },
-    { name: "Building 2", Lot: "Lot J" },
-    { name: "Building 3", Lot: "Lot J" },
-    { name: "Building 4", Lot: "Lot J" },
-    { name: "Building 4A", Lot: "Lot J" },
-    { name: "Building 5", Lot: "Lot J" },
-    { name: "Building 6", Lot: "Lot J" },
-    { name: "Building 7", Lot: "Lot J" },
-    { name: "Building 8", Lot: "Lot J" },
-    { name: "Building 9", Lot: "Stucture 1" },
-    { name: "Building 13", Lot: "Structure 1" },
-    { name: "Building 15", Lot: "Structure 1" },
-    { name: "Building 17", Lot: "Structure 1" },
-    { name: "Building 20", Lot: "lot F1" },
-    { name: "Building 21", Lot: "lot F1" },
-    { name: "Building 22", Lot: "lot F1" },
-    { name: "Building 23", Lot: "lot F1" },
-    { name: "Building 24", Lot: "lot J" },
-    { name: "Building 24A", Lot: "Structure 2" },
-    { name: "Building 24B", Lot: "Structure 2" },
-    { name: "Building 24C", Lot: "Structure 2" },
-    { name: "Building 24D", Lot: "Structure 2" },
-    { name: "Building 24E", Lot: "Structure 2" },
-    { name: "Building 25", Lot: "Structure 2" },
-    { name: "Building 26", Lot: "Structure 1" },
-    { name: "Building 26A", Lot: "Structure 1" },
-    { name: "Building 28", Lot: "Lot T" },
-    { name: "Building 29", Lot: "Lot F9" },
-    { name: "Building 30", Lot: "Lot M" },
-    { name: "Building 31", Lot: "Lot M" },
-    { name: "Building 32", Lot: "Lot M" },
-    { name: "Building 33", Lot: "Lot M" },
-    { name: "Building 34", Lot: "Lot M" },
-    { name: "Building 35", Lot: "Structure 2" },
-    { name: "Building 41", Lot: "Structure 2" },
-    { name: "Building 42", Lot: "Structure 2" },
-    { name: "Building 83", Lot: "Lot T" },
-    { name: "Building 162", Lot: "Structure 1" },
-    { name: "Building 163", Lot: "Structure 1" },
-    { name: "Building 164", Lot: "Structure 1" },
+   const closeLots = [
+    { building: "Building 1", lot: "Lot J", busyTime: "8:00 AM - 9:00 AM", link: "https://www.cpp.edu/maps/?id=1130#!m/690096"},
+    { building: "Building 2", lot: "Lot J", link: "https://www.cpp.edu/maps/?id=1130#!m/690096"},
+    { building: "Building 3", lot: "Lot J", link: "https://www.cpp.edu/maps/?id=1130#!m/690096"},
+    { building: "Building 4", lot: "Lot J", link: "https://www.cpp.edu/maps/?id=1130#!m/690096"},
+    { building: "Building 4A", lot: "Lot J", link: "https://www.cpp.edu/maps/?id=1130#!m/690096"},
+    { building: "Building 5", lot: "Lot J", link: "https://www.cpp.edu/maps/?id=1130#!m/690096"},
+    { building: "Building 6", lot: "Lot J", link: "https://www.cpp.edu/maps/?id=1130#!m/690096"},
+    { building: "Building 7", lot: "Lot J", link: "https://www.cpp.edu/maps/?id=1130#!m/690096"},
+    { building: "Building 8", lot: "Lot J", link: "https://www.cpp.edu/maps/?id=1130#!m/690096"},
+    { building: "Building 9", lot: "Stucture 1", link: "https://www.cpp.edu/maps/?id=1130#!m/276504" },
+    { building: "Building 13", lot: "Structure 1", link: "https://www.cpp.edu/maps/?id=1130#!m/276504" },
+    { building: "Building 15", lot: "Structure 1", link: "https://www.cpp.edu/maps/?id=1130#!m/276504" },
+    { building: "Building 17", lot: "Structure 1", link: "https://www.cpp.edu/maps/?id=1130#!m/276504" },
+    { building: "Building 20", lot: "lot F1" },
+    { building: "Building 21", lot: "lot F1" },
+    { building: "Building 22", lot: "lot F1" },
+    { building: "Building 23", lot: "lot F1" },
+    { building: "Building 24", lot: "lot J", link: "https://www.cpp.edu/maps/?id=1130#!m/690096"},
+    { building: "Building 24A", lot: "Structure 2" },
+    { building: "Building 24B", lot: "Structure 2" },
+    { building: "Building 24C", lot: "Structure 2" },
+    { building: "Building 24D", lot: "Structure 2" },
+    { building: "Building 24E", lot: "Structure 2" },
+    { building: "Building 25", lot: "Structure 2" },
+    { building: "Building 26", lot: "Structure 1", link: "https://www.cpp.edu/maps/?id=1130#!m/276504" },
+    { building: "Building 26A", lot: "Structure 1", link: "https://www.cpp.edu/maps/?id=1130#!m/276504" },
+    { building: "Building 28", lot: "Lot T" },
+    { building: "Building 29", lot: "Lot F9" },
+    { building: "Building 30", lot: "Lot M" },
+    { building: "Building 31", lot: "Lot M" },
+    { building: "Building 32", lot: "Lot M" },
+    { building: "Building 33", lot: "Lot M" },
+    { building: "Building 34", lot: "Lot M" },
+    { building: "Building 35", lot: "Structure 2" },
+    { building: "Building 41", lot: "Structure 2" },
+    { building: "Building 42", lot: "Structure 2" },
+    { building: "Building 83", lot: "Lot T" },
+    { building: "Building 162", lot: "Structure 1", link: "https://www.cpp.edu/maps/?id=1130#!m/276504" },
+    { building: "Building 163", lot: "Structure 1", link: "https://www.cpp.edu/maps/?id=1130#!m/276504" },
+    { building: "Building 164", lot: "Structure 1", link: "https://www.cpp.edu/maps/?id=1130#!m/276504" },
   
   ];
 
-  const SafeLots = [
-    { name: "Building 1", Lot: "Lot R" },
-    { name: "Building 2", Lot: "Lot M" },
-    { name: "Building 3", Lot: "Lot M" },
-    { name: "Building 4", Lot: "Lot M" },
-    { name: "Building 4A", Lot: "Lot M" },
-    { name: "Building 5", Lot: "Lot M" },
-    { name: "Building 6", Lot: "Lot R" },
-    { name: "Building 7", Lot: "Lot J" },
-    { name: "Building 8", Lot: "Lot R" },
-    { name: "Building 9", Lot: "Lot R" },
-    { name: "Building 13", Lot: "Lots F5, F9, F10" },
-    { name: "Building 15", Lot: "Lot B" },
-    { name: "Building 17", Lot: "Lot R" },
-    { name: "Building 20", Lot: "Lots F5, F9, F10" },
-    { name: "Building 21", Lot: "Lots F5, F9, F10" },
-    { name: "Building 22", Lot: "Lots F5, F9, F10" },
-    { name: "Building 23", Lot: "Lots F5, F9, F10" },
-    { name: "Building 24", Lot: "lot K" },
-    { name: "Building 24A", Lot: "lot K" },
-    { name: "Building 24B", Lot: "lot K" },
-    { name: "Building 24C", Lot: "lot K" },
-    { name: "Building 24D", Lot: "lot K" },
-    { name: "Building 24E", Lot: "lot K" },
-    { name: "Building 25", Lot: "Lot K" },
-    { name: "Building 26", Lot: "Lot B" },
-    { name: "Building 26A", Lot: "Lot B" },
-    { name: "Building 28", Lot: "Lot T" },
-    { name: "Building 29", Lot: "Lot E2" },
-    { name: "Building 30", Lot: "Lot M" },
-    { name: "Building 31", Lot: "Lot M" },
-    { name: "Building 32", Lot: "Lot M" },
-    { name: "Building 33", Lot: "Lot M" },
-    { name: "Building 34", Lot: "Lot M" },
-    { name: "Building 35", Lot: "Lot B" },
-    { name: "Building 41", Lot: "Lot B" },
-    { name: "Building 42", Lot: "Lot B" },
-    { name: "Building 83", Lot: "Lot E1" },
-    { name: "Building 162", Lot: "Lots F5, F9, F10" },
-    { name: "Building 163", Lot: "Lots F5, F9, F10" },
-    { name: "Building 164", Lot: "Lots F5, F9, F10" },
+  const safeLots = [
+    { building: "Building 1", lot: "Lot R" },
+    { building: "Building 2", lot: "Lot M" },
+    { building: "Building 3", lot: "Lot M" },
+    { building: "Building 4", lot: "Lot M" },
+    { building: "Building 4A", lot: "Lot M" },
+    { building: "Building 5", lot: "Lot M" },
+    { building: "Building 6", lot: "Lot R" },
+    { building: "Building 7", lot: "Lot J" },
+    { building: "Building 8", lot: "Lot R" },
+    { building: "Building 9", lot: "Lot R" },
+    { building: "Building 13", lot: "Lots F5, F9, F10" },
+    { building: "Building 15", lot: "Lot B" },
+    { building: "Building 17", lot: "Lot R" },
+    { building: "Building 20", lot: "Lots F5, F9, F10" },
+    { building: "Building 21", lot: "Lots F5, F9, F10" },
+    { building: "Building 22", lot: "Lots F5, F9, F10" },
+    { building: "Building 23", lot: "Lots F5, F9, F10" },
+    { building: "Building 24", lot: "lot K" },
+    { building: "Building 24A", lot: "lot K" },
+    { building: "Building 24B", lot: "lot K" },
+    { building: "Building 24C", lot: "lot K" },
+    { building: "Building 24D", lot: "lot K" },
+    { building: "Building 24E", lot: "lot K" },
+    { building: "Building 25", lot: "Lot K" },
+    { building: "Building 26", lot: "Lot B" },
+    { building: "Building 26A", lot: "Lot B" },
+    { building: "Building 28", lot: "Lot T" },
+    { building: "Building 29", lot: "Lot E2" },
+    { building: "Building 30", lot: "Lot M" },
+    { building: "Building 31", lot: "Lot M" },
+    { building: "Building 32", lot: "Lot M" },
+    { building: "Building 33", lot: "Lot M" },
+    { building: "Building 34", lot: "Lot M" },
+    { building: "Building 35", lot: "Lot B" },
+    { building: "Building 41", lot: "Lot B" },
+    { building: "Building 42", lot: "Lot B" },
+    { building: "Building 83", lot: "Lot E1" },
+    { building: "Building 162", lot: "Lots F5, F9, F10" },
+    { building: "Building 163", lot: "Lots F5, F9, F10" },
+    { building: "Building 164", lot: "Lots F5, F9, F10" },
   
   ];
 
@@ -192,10 +192,21 @@ function Home() {
 
   // Filters the lots shown in the table through the time slot selection or the app search bar on the top right
   const filterParkingLots = () => {
-    const filteredLots = parkingLots.filter((lot) => {
-      const matchesSearch = lot.name.toLowerCase().includes(searchInput.toLowerCase()); //to help match the search regardless of caps
+    let selectedList;
+    if (selectedPreference === "close") {
+      selectedList = closeLots;
+    }
+    if (selectedPreference === "easy") {
+      selectedList = safeLots;
+    }
+    else {
+      selectedList = parkingLots;
+    }
+    const filteredLots = selectedList.filter((lot) => {
+      const matchesBuilding = lot.building.toLowerCase().includes(searchInput.toLowerCase());
+      const matchesSearch = lot.lot.toLowerCase().includes(searchInput.toLowerCase()); //to help match the search regardless of caps
       const matchesTime = selectedTime === "" || lot.busyTime !== selectedTime; //changed so the time slot search returns lots that are not busy at the time slot
-      return matchesSearch && matchesTime;
+      return matchesSearch && matchesTime && matchesBuilding;
     });
 
     setFilteredParkingLots(filteredLots);
@@ -281,14 +292,14 @@ function Home() {
           <div style={flexContainerStyle}>
             <Select
               id = "buildingDropdown"
-              value={selectedPreference}
+              value={selectedBuilding}
               onChange={(e) => setSelectedBuilding(e.target.value)}
             >
               <MenuItem value="">None</MenuItem>
               {/* Maps the entire list of buildings into the dropdown */}
-              {CloseLots.map((building) => (
-                <MenuItem key={building.name} value={building.name}>
-                  {building.name}
+              {closeLots.map((building) => (
+                <MenuItem key={building.building} value={building.building}>
+                  {building.building}
                 </MenuItem>
               ))}
             </Select>
@@ -321,7 +332,7 @@ function Home() {
           <TableHead>
             <TableRow>
               <TableCell><b>Building</b></TableCell>
-              <TableCell><b>Student parking lot</b></TableCell>
+              <TableCell><b>Relevant student parking lot</b></TableCell>
               <TableCell><b>Busy Time</b></TableCell>
               <TableCell><b>Link</b></TableCell>
             </TableRow>
@@ -329,7 +340,8 @@ function Home() {
           <TableBody>
             {filteredParkingLots.map((lot, index) => (
               <TableRow key={index}>
-                <TableCell>{lot.name}</TableCell>
+                <TableCell>{lot.building}</TableCell>
+                <TableCell>{lot.lot}</TableCell>
                 <TableCell>{lot.busyTime}</TableCell>
                 <TableCell>
                   <Button  class="btn btn-info" href={lot.link}>
