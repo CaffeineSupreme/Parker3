@@ -16,6 +16,8 @@ import TableRow from '@mui/material/TableRow';
 import Button from '@mui/material/Button';
 import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
+import Dialog from '@mui/material/Dialog';
+import DialogContent from '@mui/material/DialogContent';
 import './Home.css';
 
 const Search = styled('div')(({ theme }) => ({
@@ -80,6 +82,10 @@ const flexContainerStyle = {
 };
 
 function Home() {
+  const [openDialog, setOpenDialog] = useState(true);
+
+  const handleCloseDialog = () => {
+    setOpenDialog(false);};
   const date = moment().format("MMM Do YY");
   useEffect(() => {
     console.log(localStorage.getItem("name"));
@@ -215,6 +221,17 @@ function Home() {
 
   return (
     <div>
+      <Dialog open={openDialog} onClose={handleCloseDialog}>
+        <DialogContent>
+          <Typography variant="h6">
+            Welcome to Parker!
+          </Typography>
+          <Typography>
+            A CPP Student parking assistant where you can filter the lots depending on what building your class is at or what time you will arrive on campus. You will then have the choice between finding the closest parking lot or the parking lot where you have the best chance of finding parking.
+          </Typography>
+        </DialogContent>
+      </Dialog>
+
       <Box sx={{ flexGrow: 1 }}>
         <AppBar position="static" sx={{ backgroundColor: 'green' }}>
         <Toolbar>
@@ -366,6 +383,7 @@ function Home() {
       </TableContainer>
     </div>
   );
+  
 }
 
 export default Home;
