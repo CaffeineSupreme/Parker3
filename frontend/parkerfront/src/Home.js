@@ -75,6 +75,7 @@ const centerContainerStyle = {
 const flexContainerStyle = {
   display: 'flex',
   alignItems: 'center',
+  marginBottom: '10px', 
 };
 
 function Home() {
@@ -196,15 +197,13 @@ function Home() {
     let selectedList;
     if (selectedPreference === "close") {
       selectedList = closeLots;
-    }
-    else if (selectedPreference === "easy") {
+    } else if (selectedPreference === "easy") {
       selectedList = safeLots;
-    }
-    else {
+    } else {
       selectedList = parkingLots;
     }
     const filteredLots = selectedList.filter((lot) => {
-      const matchesBuilding = lot.building.toLowerCase().includes(searchInput.toLowerCase());
+      const matchesBuilding = lot.building.toLowerCase().includes(selectedBuilding.toLowerCase());
       const matchesSearch = lot.lot.toLowerCase().includes(searchInput.toLowerCase()); //to help match the search regardless of caps
       const matchesTime = selectedTime === "" || lot.busyTime !== selectedTime; //changed so the time slot search returns lots that are not busy at the time slot
       return matchesSearch && matchesTime && matchesBuilding;
