@@ -83,7 +83,7 @@ const flexContainerStyle = {
 
 function Home() {
   const [openDialog, setOpenDialog] = useState(true);
-
+  
   const handleCloseDialog = () => {
     setOpenDialog(false);};
   const date = moment().format("MMM Do YY");
@@ -310,8 +310,12 @@ function Home() {
             </div>
           </div>
         </div>
+        <div style={centerContainerStyle}>
+        <Typography variant="h6" className="time_slot" style={{ margin: 0, padding: 0 }}>
+        OR
+        </Typography>
+        </div>
       </div>
-
       {/* Setting selected preference for parking, either closest or easily available*/}
       <div style={centerContainerStyle}>
           <Typography variant="h6" className="time_slot">
@@ -333,7 +337,6 @@ function Home() {
             </Select>
           </div>
         </div>
-
       {/* Setting selected preference for parking, either closest or easily available*/}
       <div style={centerContainerStyle}>
           <Typography variant="h6" className="time_slot">
