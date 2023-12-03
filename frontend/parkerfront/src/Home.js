@@ -26,6 +26,7 @@ const Search = styled('div')(({ theme }) => ({
     backgroundColor: alpha(theme.palette.common.white, 0.25),
   },
   marginLeft: 0,
+  marginRight: theme.spacing(2),
   width: '100%',
   [theme.breakpoints.up('sm')]: {
     marginLeft: theme.spacing(1),
@@ -217,41 +218,51 @@ function Home() {
       <Box sx={{ flexGrow: 1 }}>
         <AppBar position="static" sx={{ backgroundColor: 'green' }}>
         <Toolbar>
-            <Typography
-              variant="h6"
-              noWrap
-              component="div"
-              sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
-            >
-              Welcome to Parker {JSON.parse(localStorage.getItem("name"))}!
-            </Typography>
-            <Typography variant="h6" noWrap>
-              Date: {date}
-            </Typography>
-            <Search>
-              <SearchIconWrapper>
-                <SearchIcon />
-              </SearchIconWrapper>
-              {/* search bar */}
-              <StyledInputBase
-                placeholder="Search for lot"
-                inputProps={{ 'aria-label': 'search' }}
-                value={searchInput}
-                onChange={(e) => setSearchInput(e.target.value)}
-                //to be able to press enter for the search bar and allow the filter function
-                onKeyPress={(e) => {
-                  if (e.key === 'Enter') {
-                    filterParkingLots();
-                  }
-                }}
-              />
-            </Search>
-          </Toolbar>
+          <Typography
+            variant="h6"
+            noWrap
+            component="div"
+            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
+          >
+            Welcome to Parker {JSON.parse(localStorage.getItem("name"))}!
+          </Typography>
+          <Typography variant="h6" noWrap>
+            Date: {date}
+          </Typography>
+          <Search>
+            <SearchIconWrapper>
+              <SearchIcon />
+            </SearchIconWrapper>
+            <StyledInputBase
+              placeholder="Search for lot"
+              inputProps={{ 'aria-label': 'search' }}
+              value={searchInput}
+              onChange={(e) => setSearchInput(e.target.value)}
+              onKeyPress={(e) => {
+                if (e.key === 'Enter') {
+                  filterParkingLots();
+                }
+              }}
+            />
+          </Search>
+          <Button
+            variant="contained"
+            color="primary"
+            href="https://forms.gle/jrcybyds9kV59biJ7"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Feedback
+          </Button>
+        </Toolbar>
+
 
         </AppBar>
       </Box>
       <div style={{ display: 'flex', justifyContent: 'center' }}>
-        <img src="/Parkerlogo.png" alt="Parker Logo" />
+        <img src="/Parkerlogo.png" alt="Parker Logo" style={{ cursor: 'pointer' }}
+        onClick={() => window.location.reload()}
+        />
       </div>
       <div style={centerContainerStyle}>
         <div style={flexContainerStyle}>
