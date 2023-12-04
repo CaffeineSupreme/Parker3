@@ -207,16 +207,25 @@ function Home() {
     } else if (selectedPreference === "easy") {
       selectedList = safeLots;
     } else {
-      selectedList = parkingLots;
+      selectedList = [...closeLots, ...safeLots];
     }
     const filteredLots = selectedList.filter((lot) => {
-      const matchesBuilding = lot.building.toLowerCase().includes(selectedBuilding.toLowerCase());
+      const matchesBuilding = lot.building.toLowerCase() === selectedBuilding.toLowerCase();
       const matchesSearch = lot.lot.toLowerCase().includes(searchInput.toLowerCase()); //to help match the search regardless of caps
       const matchesTime = selectedTime === "" || lot.busyTime !== selectedTime; //changed so the time slot search returns lots that are not busy at the time slot
       return matchesSearch && matchesTime && matchesBuilding;
     });
 
-    setFilteredParkingLots(filteredLots);
+    const sortedLots = selectedPreference ? filteredLots : sortLotsByPreference(filteredLots);
+
+    setFilteredParkingLots(sortedLots);
+  };
+  const sortLotsByPreference = (lots) => {
+    const closestLots = lots.filter((lot) => closeLots.some((closeLot) => closeLot.lot === lot.lot));
+    const betterChanceLots = lots.filter(
+      (lot) => !closestLots.some((closeLot) => closeLot.lot === lot.lot) && safeLots.some((safeLot) => safeLot.lot === lot.lot)
+    );
+    return [...closestLots, ...betterChanceLots];
   };
 
   return (
